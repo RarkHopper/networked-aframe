@@ -1,0 +1,11 @@
+services:
+  dev:
+    build: .
+    volumes:
+      - ..:/naf
+    tty: true
+    ports:
+      - 8080:8080
+    environment:
+      - PYTHONUNBUFFERED=1
+    working_dir: /naf

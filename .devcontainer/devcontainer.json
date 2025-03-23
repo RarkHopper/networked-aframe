@@ -1,0 +1,37 @@
+{
+    "name": "taruwoshiru",
+    "dockerComposeFile": "compose.yaml",
+    "service": "dev",
+    "workspaceFolder": "/naf",
+    "features": {
+      "ghcr.io/devcontainers/features/docker-in-docker": {}
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.formatting.provider": "autopep8",
+                "editor.formatOnSave": true,
+                "python.linting.enabled": true,
+                "cSpell.enabled": true,
+                "cSpell.language": "en,ja",
+                "cSpell.extensions": [".html", ".py"]
+            },
+            "extensions": [
+                "ms-python.python",
+                "esbenp.prettier-vscode",
+                "ms-vscode.github-authentication",
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                "streetsidesoftware.code-spell-checker",
+                "batisteo.vscode-django",
+                "bibhasdn.django-html",
+                "EditorConfig.EditorConfig",
+                "ms-azuretools.vscode-docker",
+                "ms-vscode.makefile-tools",
+                "bradlc.vscode-tailwindcss"
+            ]
+        }
+    },
+    "postCreateCommand": "make install-api-deps && make build-frontend",
+    "remoteUser": "vscode"
+}
